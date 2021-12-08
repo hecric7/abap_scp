@@ -1,0 +1,87 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+    typeName: 'Libro',
+    typeNamePlural: 'Libros',
+    typeImageUrl: '',
+    imageUrl: 'Url',
+    title: {
+        type: #STANDARD,
+        label: '',
+        iconUrl: '',
+        criticality: '',
+        criticalityRepresentation: #WITHOUT_ICON,
+        value: 'Titulo',
+        valueQualifier: '',
+        targetElement: '',
+        url: ''
+    },
+    description: {
+        type: #STANDARD,
+        label: '',
+        iconUrl: '',
+        criticality: '',
+        criticalityRepresentation: #WITHOUT_ICON,
+        value: 'Autor',
+        valueQualifier: '',
+        targetElement: '',
+        url: ''
+    }
+}
+@Search.searchable: true
+annotate view Z_I_LIBROS_LIST with
+{
+
+  @UI.facet: [{ id: 'DetallesLibro', label: 'Detalles del Libro', type: #COLLECTION, position: 10 },
+              { id: 'Libro', parentId: 'DetallesLibro', label: 'Detalles', type: #FIELDGROUP_REFERENCE, targetQualifier: 'DetallesLibro' },
+              { id: 'Cliente', label: 'Clientes', type: #LINEITEM_REFERENCE, targetElement: '_Clientes', position: 20 }]
+              
+  @UI.fieldGroup: [{ qualifier: 'DetallesLibro', position: 10 }]
+  ID_Libro;
+  
+  @UI: { lineItem: [{ position: 10, importance: #HIGH }],
+         selectionField: [{ position: 30 }] }
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'Z_B_CATEGOL', element: 'BiCateg' } }]
+  BI_Categoria;
+
+  @UI: { lineItem: [{ position: 20, importance: #HIGH }],
+         selectionField: [{ position: 10 }],
+         fieldGroup: [{ qualifier: 'DetallesLibro', position: 20 }] }
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'Z_B_Libros', element: 'Titulo' } } ]
+  Titulo;
+  
+  @UI: { lineItem: [{ position: 30, importance: #HIGH }],
+         fieldGroup: [{ qualifier: 'DetallesLibro', position: 30 }] }
+  Autor;
+
+  @UI: { lineItem: [{ position: 40, importance: #HIGH }],
+         selectionField: [{ position: 20 }],
+         fieldGroup: [{ qualifier: 'DetallesLibro', position: 40 }] }
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'Z_B_Libros', element: 'Editorial' } }]
+  @Search: {
+      defaultSearchElement: true,
+      ranking: #MEDIUM,
+      fuzzinessThreshold: 0.8
+      }
+  Editorial;
+  
+  @UI: { lineItem: [{ position: 50, importance: #MEDIUM }],
+         fieldGroup: [{ qualifier: 'DetallesLibro', position: 50 }] }
+  Idioma;
+  
+  @UI: { fieldGroup: [{ qualifier: 'DetallesLibro', position: 60 }] }
+  Paginas;
+  
+  @UI: { fieldGroup: [{ qualifier: 'DetallesLibro', position: 70 }] }
+  Precio;
+  
+  @UI: { fieldGroup: [{ qualifier: 'DetallesLibro', position: 80 }] }
+  Moneda;
+  
+  @UI: { lineItem: [{ position: 90, importance: #MEDIUM }],
+         fieldGroup: [{ qualifier: 'DetallesLibro', position: 90 }] }
+  Formato;
+  
+  @UI: { lineItem: [{ position: 100, importance: #HIGH, label: 'Ventas', criticality: 'Ventas' }] }  
+  Ventas;
+
+}

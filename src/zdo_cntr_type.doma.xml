@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DOMA" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD01V>
+    <DOMNAME>ZDO_CNTR_TYPE</DOMNAME>
+    <DDLANGUAGE>E</DDLANGUAGE>
+    <DATATYPE>CHAR</DATATYPE>
+    <LENG>000002</LENG>
+    <OUTPUTLEN>000002</OUTPUTLEN>
+    <VALEXI>X</VALEXI>
+    <DDTEXT>Tipo de contrato</DDTEXT>
+    <DOMMASTER>E</DOMMASTER>
+   </DD01V>
+   <DD07V_TAB>
+    <DD07V>
+     <DOMNAME>ZDO_CNTR_TYPE</DOMNAME>
+     <VALPOS>0001</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>C0</DOMVALUE_L>
+     <DDTEXT>Renting</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <DOMNAME>ZDO_CNTR_TYPE</DOMNAME>
+     <VALPOS>0002</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>C1</DOMVALUE_L>
+     <DDTEXT>Renting y Asistencia</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <DOMNAME>ZDO_CNTR_TYPE</DOMNAME>
+     <VALPOS>0003</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>C2</DOMVALUE_L>
+     <DDTEXT>Renting, Asistencia y Seguro básico</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <DOMNAME>ZDO_CNTR_TYPE</DOMNAME>
+     <VALPOS>0004</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>C3</DOMVALUE_L>
+     <DDTEXT>Renting, Asistencia, Seguro básico y Cancelación</DDTEXT>
+    </DD07V>
+    <DD07V>
+     <DOMNAME>ZDO_CNTR_TYPE</DOMNAME>
+     <VALPOS>0005</VALPOS>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DOMVALUE_L>C4</DOMVALUE_L>
+     <DDTEXT>Cobertura completa</DDTEXT>
+    </DD07V>
+   </DD07V_TAB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

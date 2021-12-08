@@ -1,0 +1,55 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+    typeName: 'Cliente',
+    typeNamePlural: 'Clientes',
+    typeImageUrl: '',
+    imageUrl: 'URL',
+    title: {
+        type: #STANDARD,
+        label: '',
+        iconUrl: '',
+        criticality: '',
+        criticalityRepresentation: #WITHOUT_ICON,
+        value: 'Nombre',
+        valueQualifier: '',
+        targetElement: '',
+        url: ''
+    },
+    description: {
+        type: #STANDARD,
+        label: '',
+        iconUrl: '',
+        criticality: '',
+        criticalityRepresentation: #WITHOUT_ICON,
+        value: 'Apellidos',
+        valueQualifier: '',
+        targetElement: '',
+        url: ''
+    }
+}
+annotate view z_b_clnts_lib with
+{
+
+  @UI.facet: [{ id: 'DetallesCliente', label: 'Detalles del Cliente', type: #COLLECTION, position: 10 },
+              { id: 'Cliente', parentId: 'DetallesCliente', label: 'Detalles', type: #FIELDGROUP_REFERENCE, targetQualifier: 'DetallesCliente' }]
+  
+  @UI: { lineItem: [{ position: 10, importance: #HIGH, label: 'Cliente' }],
+         fieldGroup: [{ qualifier: 'DetallesCliente', position: 10 }]}
+  IdCliente;
+
+  @UI.lineItem: [{ position: 20, importance: #HIGH, label: 'Libro' }]
+  IdLibro;
+  
+  @UI.fieldGroup: [{ qualifier: 'DetallesCliente', position: 20, label: 'Nombre' }]
+  Nombre;
+  
+  @UI.fieldGroup:  [{ qualifier: 'DetallesCliente', position: 30, label: 'Apellidos' }]
+  Apellidos;
+  
+  @UI.fieldGroup:  [{ qualifier: 'DetallesCliente', position: 40, label: 'Correo Electrónico' }]
+  EMail;
+  
+  @UI.fieldGroup:  [{ qualifier: 'DetallesCliente', position: 50, label: 'Tipo de Acceso' }]
+  TipoAcceso;
+
+}
